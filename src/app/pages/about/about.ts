@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -9,6 +9,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./about.css'], // fixed typo
 })
 export class About {
+  isServer = false;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isServer = isPlatformServer(this.platformId);
+  }
+
   designations = [
     'REALTOR®', 'ABR', 'CDPE', 'GRI', 'SFR', 'TAHS', 'eAgentC', 'CM', 'DTM', 'RP'
   ];
