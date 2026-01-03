@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID, NgZone } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 interface Slide {
@@ -22,6 +22,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   currentIndex = 0;
   private intervalId: any;
   isTransitioning = false;
+  isBrowser: boolean;
 
   slides: Slide[] = [
     {
@@ -62,15 +63,29 @@ export class HeroComponent implements OnInit, OnDestroy {
     }
   ];
 
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private ngZone: NgZone
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
   ngOnInit() {
-    this.startAutoPlay();
+    if (this.isBrowser) {
+      this.startAutoPlay();
+    }
   }
 
   startAutoPlay() {
     this.stopAutoPlay();
-    this.intervalId = setInterval(() => {
-      this.nextSlide();
-    }, 6000);
+    // Run outside Angular so the stable state isn't affected during SSR/Prerendering
+    this.ngZone.runOutsideAngular(() => {
+      this.intervalId = setInterval(() => {
+        this.ngZone.run(() => {
+          this.nextSlide();
+        });
+      }, 6000);
+    });
   }
 
   stopAutoPlay() {
@@ -98,12 +113,13 @@ export class HeroComponent implements OnInit, OnDestroy {
     if (this.isTransitioning || index === this.currentIndex) return;
     this.isTransitioning = true;
     this.currentIndex = index;
-    this.startAutoPlay();
+    if (this.isBrowser) {
+      this.startAutoPlay();
+    }
     setTimeout(() => this.isTransitioning = false, 700);
   }
 
   handleImageError(event: any) {
-    console.error('Image failed to load:', event.target.src);
     event.target.src = 'https://via.placeholder.com/1200x800/1e293b/64748b?text=Texas+Real+Estate';
   }
 
