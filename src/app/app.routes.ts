@@ -4,12 +4,12 @@ import { LayoutComponent } from './components/layout/layout';
 export const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent, // The Shell (Header, Navbar, Footer)
+    component: LayoutComponent,
     children: [
       {
         path: '',
         loadComponent: () => import('./pages/home/home').then(m => m.Home),
-        pathMatch: 'full' // Add this to ensure exact match for home page
+        pathMatch: 'full'
       },
       {
         path: 'about',
@@ -47,6 +47,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: ''  // Remove pathMatch: 'full' from wildcard
+    redirectTo: ''
   }
 ];
