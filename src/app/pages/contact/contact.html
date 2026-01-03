@@ -1,0 +1,124 @@
+<section class="bg-slate-50 py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid lg:grid-cols-12 gap-16">
+
+      <div class="lg:col-span-5 space-y-8">
+        <div>
+          <span class="text-brand-red font-black uppercase tracking-widest text-xs">Bilingual: English & Persian (Farsi)</span>
+          <h1 class="text-4xl font-black text-brand-blue mt-2 uppercase tracking-tighter">Bahman Davani, CM</h1>
+          <p class="text-lg font-bold text-gray-600">Broker/Owner, REALTOR®</p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="px-2 py-1 bg-brand-blue text-white text-[10px] font-bold rounded">ABR</span>
+          <span class="px-2 py-1 bg-brand-blue text-white text-[10px] font-bold rounded">CDPE</span>
+          <span class="px-2 py-1 bg-brand-blue text-white text-[10px] font-bold rounded">GRI</span>
+          <span class="px-2 py-1 bg-brand-blue text-white text-[10px] font-bold rounded">SFR</span>
+          <span class="px-2 py-1 bg-brand-blue text-white text-[10px] font-bold rounded">TAHS</span>
+          <span class="px-2 py-1 bg-brand-red text-white text-[10px] font-bold rounded">CCIM Candidate</span>
+        </div>
+
+        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+          <p>
+            Bahman is a full-time dedicated commercial & residential real estate consultant serving
+            <strong>Collin County</strong> and North Texas. Speaking both <strong>English and Farsi (Persian)</strong>,
+            he bridges cultural gaps for international investors and local families.
+          </p>
+          <p class="border-l-4 border-brand-red pl-4 italic">
+            "With over 30 years in Plano & Dallas, I provide the analytical expertise of a Computer Science background
+            combined with Five Star real estate service."
+          </p>
+        </div>
+
+        <div class="pt-6 border-t border-gray-200">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-10 h-10 rounded-full bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+              <span class="material-icons">phone</span>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase font-bold text-gray-400">Mobile</p>
+              <a href="tel:214-457-7055" class="text-lg font-black text-brand-blue">214-457-7055</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+              <span class="material-icons">email</span>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase font-bold text-gray-400">Email</p>
+              <a href="mailto:Bahman@TexasFiveStarRealty.com" class="text-sm font-bold text-brand-blue underline">Bahman@TexasFiveStarRealty.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl shadow-slate-200/60 border border-slate-100">
+          <h2 class="text-2xl font-black text-brand-blue mb-8 uppercase tracking-tight">Contact Us Form</h2>
+
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="space-y-1">
+              <label class="text-[11px] font-black uppercase text-gray-400 ml-1">First Name*</label>
+              <input type="text" [(ngModel)]="contactData.firstName" name="firstName" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue outline-none transition-all">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[11px] font-black uppercase text-gray-400 ml-1">Last Name*</label>
+              <input type="text" [(ngModel)]="contactData.lastName" name="lastName" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue outline-none transition-all">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[11px] font-black uppercase text-gray-400 ml-1">Email*</label>
+              <input type="email" [(ngModel)]="contactData.email" name="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue outline-none transition-all">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[11px] font-black uppercase text-gray-400 ml-1">Phone</label>
+              <input type="tel" [(ngModel)]="contactData.phone" name="phone" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue outline-none transition-all">
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[11px] font-black uppercase text-gray-400 ml-1">Best time to reach me</label>
+              <select [(ngModel)]="contactData.bestTime" name="bestTime" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue outline-none appearance-none bg-white">
+                <option>Anytime</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+              </select>
+            </div>
+
+            <div class="space-y-1">
+              <label class="text-[11px] font-black uppercase text-gray-400 ml-1">I am interested in:</label>
+              <select [(ngModel)]="contactData.interest" name="interest" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue outline-none appearance-none bg-white">
+                <option>Listing my home</option>
+                <option>Finding an agent</option>
+                <option>Relocation</option>
+                <option>Receiving a CMA</option>
+                <option>Mortgage Info</option>
+                <option>Learning about Careers</option>
+                <option>Purchasing a property</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="md:col-span-2 space-y-1">
+              <label class="text-[11px] font-black uppercase text-gray-400 ml-1">Comment or Message*</label>
+              <textarea [(ngModel)]="contactData.message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue outline-none transition-all"></textarea>
+            </div>
+
+            <div class="md:col-span-2">
+              <button type="submit" [disabled]="!contactForm.valid" class="w-full bg-brand-blue text-white font-black uppercase tracking-widest py-4 rounded-xl hover:bg-brand-red transition-all shadow-lg shadow-brand-blue/20 disabled:opacity-50">
+                Send Message
+              </button>
+              <p class="text-[10px] text-gray-400 mt-4">* Marks required fields. Your information is kept strictly confidential.</p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

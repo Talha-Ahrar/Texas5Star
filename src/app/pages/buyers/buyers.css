@@ -1,0 +1,47 @@
+.text-brand-blue { color: #002349; }
+.bg-brand-blue { background-color: #002349; }
+.text-brand-red { color: #e81c2e; }
+.bg-brand-red { background-color: #e81c2e; }
+
+.wish-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.wish-input label {
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #94a3b8; /* Slate 400 */
+  margin-left: 0.5rem;
+}
+
+.wish-input input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.wish-input input:focus {
+  border-color: #002349;
+  box-shadow: 0 0 0 4px rgba(0, 35, 73, 0.05);
+}
+
+.sidebar-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sidebar-link:hover {
+  color: #e81c2e;
+}

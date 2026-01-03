@@ -1,0 +1,91 @@
+<nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100" role="navigation">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+
+    <div class="flex items-center gap-4">
+      <button
+        type="button"
+        (click)="onMenuClick()"
+        aria-label="Open sidebar menu"
+        class="flex items-center gap-3 text-brand-blue group px-4 py-2 border border-slate-200 rounded-full hover:bg-slate-50 hover:border-brand-blue transition-all duration-300"
+      >
+        <div class="flex flex-col gap-1">
+          <span class="w-5 h-0.5 bg-brand-blue group-hover:w-3 transition-all"></span>
+          <span class="w-3 h-0.5 bg-brand-blue group-hover:w-5 transition-all"></span>
+        </div>
+        <span class="hidden sm:inline text-[10px] font-black tracking-widest uppercase">
+          Expertise
+        </span>
+      </button>
+
+      <a routerLink="/" class="flex items-center">
+        <span class="text-brand-blue font-black tracking-tighter text-xl uppercase">
+          Texas<span class="text-brand-red">5Star</span>
+        </span>
+      </a>
+    </div>
+
+    <ul class="hidden xl:flex items-center space-x-6 text-slate-600 font-bold uppercase text-[11px] tracking-widest h-full">
+      <li><a routerLink="/" routerLinkActive="text-brand-red" [routerLinkActiveOptions]="{ exact: true }" class="hover:text-brand-blue">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="text-brand-red" class="hover:text-brand-blue">About us</a></li>
+      <li><a routerLink="/buyers" routerLinkActive="text-brand-red" class="hover:text-brand-blue">Buyers</a></li>
+      <li><a routerLink="/sellers" routerLinkActive="text-brand-red" class="hover:text-brand-blue">Sellers</a></li>
+      <li><a routerLink="/investors" routerLinkActive="text-brand-red" class="hover:text-brand-blue">Investor</a></li>
+      <li><a routerLink="/commercial" routerLinkActive="text-brand-red" class="hover:text-brand-blue">Commercial</a></li>
+      <li><a routerLink="/relocation" routerLinkActive="text-brand-red" class="hover:text-brand-blue">Relocation</a></li>
+
+      <li class="relative h-full flex items-center group">
+        <span class="flex items-center gap-1 cursor-pointer hover:text-brand-blue transition-all">
+          Partners
+          <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </span>
+        <div class="absolute top-[60px] left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-b-xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60]">
+          <ul class="flex flex-col text-[10px] tracking-widest">
+            <li><a routerLink="/partners/lenders" class="block px-6 py-2 hover:bg-slate-50 hover:text-brand-red">Lenders</a></li>
+            <li><a routerLink="/partners/inspectors" class="block px-6 py-2 hover:bg-slate-50 hover:text-brand-red">Inspectors</a></li>
+            <li><a routerLink="/partners/title" class="block px-6 py-2 hover:bg-slate-50 hover:text-brand-red">Title</a></li>
+            <li><a routerLink="/partners/builder" class="block px-6 py-2 hover:bg-slate-50 hover:text-brand-red">Builder</a></li>
+            <li><a routerLink="/partners/vendors" class="block px-6 py-2 hover:bg-slate-50 hover:text-brand-red">Vendors</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a routerLink="/contact" routerLinkActive="text-brand-red" class="hover:text-brand-blue">Contact</a></li>
+    </ul>
+
+    <button class="xl:hidden text-brand-blue" (click)="toggleMobileMenu()" aria-label="Toggle mobile menu">
+      <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path *ngIf="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <path *ngIf="isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<div *ngIf="isMobileMenuOpen" class="xl:hidden bg-white border-t border-gray-100 shadow-md">
+  <ul class="flex flex-col text-slate-700 font-bold uppercase text-xs tracking-widest">
+    <li><a routerLink="/" (click)="closeMobileMenu()" class="block px-6 py-4 border-b border-gray-50">Home</a></li>
+    <li><a routerLink="/about" (click)="closeMobileMenu()" class="block px-6 py-4 border-b border-gray-50">About Us</a></li>
+    <li><a routerLink="/buyers" (click)="closeMobileMenu()" class="block px-6 py-4 border-b border-gray-50">Buyers</a></li>
+    <li><a routerLink="/sellers" (click)="closeMobileMenu()" class="block px-6 py-4 border-b border-gray-50">Sellers</a></li>
+    <li><a routerLink="/investors" (click)="closeMobileMenu()" class="block px-6 py-4 border-b border-gray-50">Investor</a></li>
+    <li><a routerLink="/commercial" (click)="closeMobileMenu()" class="block px-6 py-4 border-b border-gray-50">Commercial</a></li>
+    <li><a routerLink="/relocation" (click)="closeMobileMenu()" class="block px-6 py-4 border-b border-gray-50">Relocation</a></li>
+
+    <li>
+      <button (click)="togglePartners()" class="w-full px-6 py-4 flex justify-between items-center border-b border-gray-50">
+        Partners
+        <svg class="w-4 h-4 transition-transform" [class.rotate-180]="isPartnersOpen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <ul *ngIf="isPartnersOpen" class="bg-slate-50 border-b border-gray-100">
+        <li><a routerLink="/partners/lenders" (click)="closeMobileMenu()" class="block px-10 py-3 text-[10px] hover:text-brand-red">Lenders</a></li>
+        <li><a routerLink="/partners/inspectors" (click)="closeMobileMenu()" class="block px-10 py-3 text-[10px] hover:text-brand-red">Inspectors</a></li>
+        <li><a routerLink="/partners/title" (click)="closeMobileMenu()" class="block px-10 py-3 text-[10px] hover:text-brand-red">Title</a></li>
+        <li><a routerLink="/partners/builder" (click)="closeMobileMenu()" class="block px-10 py-3 text-[10px] hover:text-brand-red">Builder</a></li>
+        <li><a routerLink="/partners/vendors" (click)="closeMobileMenu()" class="block px-10 py-3 text-[10px] hover:text-brand-red">Vendors</a></li>
+      </ul>
+    </li>
+
+    <li><a routerLink="/contact" (click)="closeMobileMenu()" class="block px-6 py-4">Contact</a></li>
+  </ul>
+</div>

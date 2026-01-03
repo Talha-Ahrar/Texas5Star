@@ -1,0 +1,35 @@
+.text-brand-blue { color: #002349; }
+.bg-brand-blue { background-color: #002349; }
+.text-brand-red { color: #e81c2e; }
+.bg-brand-red { background-color: #e81c2e; }
+
+.seller-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.seller-link::before {
+  content: "→";
+  margin-right: 8px;
+  color: #e81c2e;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.seller-link:hover {
+  color: #e81c2e;
+  padding-left: 5px;
+}
+
+.seller-link:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}

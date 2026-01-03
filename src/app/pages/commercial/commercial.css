@@ -1,0 +1,20 @@
+.text-brand-blue { color: #002349; }
+.bg-brand-blue { background-color: #002349; }
+.text-brand-red { color: #e81c2e; }
+.bg-brand-red { background-color: #e81c2e; }
+
+/* Scannable typography */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Card hover effect */
+.hover\:shadow-2xl:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -12px rgba(0, 35, 73, 0.15);
+}
+
+/* Transition for all interactive elements */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

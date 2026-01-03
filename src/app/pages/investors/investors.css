@@ -1,0 +1,25 @@
+.text-brand-blue { color: #002349; }
+.bg-brand-blue { background-color: #002349; }
+.text-brand-red { color: #e81c2e; }
+.bg-brand-red { background-color: #e81c2e; }
+
+/* Custom shadow for the commercial grid */
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 35, 73, 0.15);
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}

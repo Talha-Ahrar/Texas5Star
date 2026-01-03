@@ -1,0 +1,155 @@
+<div class="bg-slate-50 min-h-screen">
+  <header class="bg-brand-blue py-20 px-6 text-center text-white">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">The Home Buying Process</h1>
+      <p class="text-lg opacity-90 leading-relaxed font-medium">
+        Buying a house is a complex and time-consuming task. From searching to closing, we are committed to navigating the entire process, using our expertise to buy your dream home for the best price.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 -mt-10">
+    <div class="grid lg:grid-cols-12 gap-12">
+
+      <div class="lg:col-span-8 space-y-16">
+
+        <section class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-slate-100">
+          <h2 class="text-3xl font-black text-brand-blue uppercase mb-8">Summary of Steps</h2>
+          <p class="text-gray-500 mb-10 leading-relaxed">
+            There are many details to be handled when purchasing a home. This overview summarizes the path of qualifying, finding, and buying. It is my job to streamline these steps for you.
+          </p>
+
+          <div class="space-y-4">
+            <div *ngFor="let step of buyingSteps" class="group flex gap-6 p-5 rounded-2xl hover:bg-slate-50 transition-all border-b border-slate-50 last:border-0">
+              <span class="text-2xl font-black text-brand-red/20 group-hover:text-brand-red transition-colors">{{step.id}}</span>
+              <div>
+                <h4 class="font-black text-brand-blue uppercase text-sm tracking-wide">{{step.title}}</h4>
+                <p class="text-gray-500 text-sm mt-1">{{step.detail}}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-slate-100">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
+            <div>
+              <h2 class="text-3xl font-black text-brand-blue uppercase">Your Home Wish List</h2>
+              <p class="text-gray-500 text-sm">Target the properties that meet your exact criteria.</p>
+            </div>
+            <button class="bg-brand-red text-white px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-brand-blue transition-all">
+              Download PDF Version
+            </button>
+          </div>
+
+          <form class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-5">
+              <div class="wish-input">
+                <label>House Style</label>
+                <input type="text" [(ngModel)]="wishList.houseStyle" name="style" placeholder="Modern, Ranch, etc.">
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="wish-input">
+                  <label>Bedrooms</label>
+                  <input type="number" [(ngModel)]="wishList.bedrooms" name="beds">
+                </div>
+                <div class="wish-input">
+                  <label>Bathrooms</label>
+                  <input type="number" [(ngModel)]="wishList.bathrooms" name="baths">
+                </div>
+              </div>
+              <div class="wish-input">
+                <label>Kitchen Features</label>
+                <input type="text" [(ngModel)]="wishList.kitchen" name="kitchen" placeholder="Island, Gas cooktop...">
+              </div>
+              <div class="wish-input">
+                <label>Living Room</label>
+                <input type="text" [(ngModel)]="wishList.livingRoom" name="living">
+              </div>
+              <div class="wish-input">
+                <label>Dining Room</label>
+                <input type="text" [(ngModel)]="wishList.diningRoom" name="dining">
+              </div>
+              <div class="wish-input">
+                <label>Family Room</label>
+                <input type="text" [(ngModel)]="wishList.familyRoom" name="family">
+              </div>
+              <div class="wish-input">
+                <label>Fireplace</label>
+                <input type="text" [(ngModel)]="wishList.fireplace" name="fireplace">
+              </div>
+              <div class="wish-input">
+                <label>Home Office</label>
+                <input type="text" [(ngModel)]="wishList.homeOffice" name="office">
+              </div>
+            </div>
+
+            <div class="space-y-5">
+              <div class="wish-input">
+                <label>Basement</label>
+                <input type="text" [(ngModel)]="wishList.basement" name="basement">
+              </div>
+              <div class="wish-input">
+                <label>Garage Stalls</label>
+                <input type="text" [(ngModel)]="wishList.garage" name="garage">
+              </div>
+              <div class="wish-input">
+                <label>Lot Size</label>
+                <input type="text" [(ngModel)]="wishList.lotSize" name="lotsize">
+              </div>
+              <div class="wish-input">
+                <label>Age of Property</label>
+                <input type="text" [(ngModel)]="wishList.ageOfProperty" name="age">
+              </div>
+              <div class="wish-input">
+                <label>View Requirements</label>
+                <input type="text" [(ngModel)]="wishList.view" name="view">
+              </div>
+              <div class="wish-input">
+                <label>Fencing</label>
+                <input type="text" [(ngModel)]="wishList.fencing" name="fencing">
+              </div>
+              <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                <input type="checkbox" [(ngModel)]="wishList.pool" name="pool" class="w-5 h-5 accent-brand-red">
+                <label class="text-sm font-bold text-brand-blue uppercase">Pool Required</label>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <aside class="lg:col-span-4 space-y-8">
+
+        <div class="bg-white rounded-[2rem] p-8 shadow-lg border border-slate-100">
+          <h3 class="font-black text-brand-blue uppercase mb-6">Education & Tools</h3>
+          <ul class="space-y-4">
+            <li class="sidebar-link">This Month In Real Estate</li>
+            <li class="sidebar-link">Deciding what you can afford</li>
+            <li class="sidebar-link">Location, Location, Location</li>
+            <li class="sidebar-link">New home construction options</li>
+            <li class="sidebar-link font-black text-brand-red underline">Mortgage Calculator</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-blue rounded-[2rem] p-8 text-white shadow-xl">
+          <h3 class="font-black uppercase mb-4">Why hire an agent?</h3>
+          <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+            I streamline the steps, ensure everything is completed according to plan, and negotiate the best terms.
+          </p>
+          <ul class="space-y-3 text-xs font-bold uppercase tracking-wide">
+            <li class="flex items-center gap-2"><span class="text-brand-red">✔</span> Moving Company Recommendations</li>
+            <li class="flex items-center gap-2"><span class="text-brand-red">✔</span> Helpful Moving Checklist</li>
+            <li class="flex items-center gap-2"><span class="text-brand-red">✔</span> Preferred Service Providers</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-red rounded-[2rem] p-8 text-white text-center">
+          <h3 class="text-xl font-black uppercase mb-4">Ready to Start?</h3>
+          <button routerLink="/contact" class="w-full bg-white text-brand-red font-black uppercase py-4 rounded-xl text-xs tracking-widest hover:bg-brand-blue hover:text-white transition-all">
+            Contact Us About Buying
+          </button>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+</div>

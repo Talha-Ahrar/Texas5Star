@@ -1,0 +1,9 @@
+.text-brand-blue { color: #002349; }
+.bg-brand-blue { background-color: #002349; }
+.text-brand-red { color: #e81c2e; }
+.bg-brand-red { background-color: #e81c2e; }
+
+/* Simple hover effect for inputs */
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 0 4px rgba(0, 35, 73, 0.05);
+}

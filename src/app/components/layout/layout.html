@@ -1,0 +1,20 @@
+<div class="min-h-screen flex flex-col font-sans selection:bg-brand-red selection:text-white antialiased">
+
+<app-top-header></app-top-header>
+
+  <app-navbar (menuClicked)="handleMenuClick()"></app-navbar>
+
+  <app-news-alert></app-news-alert>
+
+  <app-sidebar
+    [isOpen]="isSidebarOpen"
+    (close)="handleSidebarClose()"
+  ></app-sidebar>
+
+  <main class="flex-grow bg-slate-50/50 relative z-10">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+
+</div>

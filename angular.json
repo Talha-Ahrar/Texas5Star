@@ -25,7 +25,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/custom-theme.scss",
+              "src/app/app.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -93,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "144212cc-47e4-49c5-a3aa-de8a9c69405d"
   }
 }

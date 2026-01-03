@@ -1,0 +1,105 @@
+<div class="bg-white">
+  <section class="bg-slate-900 text-white flex flex-col lg:flex-row items-center overflow-hidden">
+    <div class="lg:w-1/2 flex justify-center bg-black">
+      <img
+        src="/image/Bahman_Half_Body.jpg"
+        alt="Bahman Davani"
+        class="max-w-full h-auto object-contain max-h-[700px] animate-fade-in"
+      >
+    </div>
+
+    <div class="lg:w-1/2 p-8 lg:p-16 space-y-6">
+      <div class="space-y-2">
+        <h1 class="text-4xl lg:text-6xl font-black tracking-tighter uppercase italic">
+          Bahman <span class="text-brand-red">Davani</span>
+        </h1>
+        <p class="text-brand-red font-bold tracking-widest text-sm uppercase">
+          Ph.D. (ABD), CM, DTM, RP | Broker & Owner
+        </p>
+      </div>
+
+      <p class="text-slate-300 leading-relaxed text-lg">
+        Providing dual-expertise in Residential/Commercial Real Estate and Mortgage Lending for over 36 years in the Plano and Dallas areas.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+        <div class="bg-white/5 border border-white/10 p-4 rounded-xl">
+          <span class="block text-[10px] uppercase tracking-widest text-brand-red font-black mb-2">Real Estate</span>
+          <a href="tel:214-457-7055" class="block font-bold">214-457-7055</a>
+          <p class="text-xs text-slate-400">Bahman@TexasFiveStarRealty.com</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 p-4 rounded-xl">
+          <span class="block text-[10px] uppercase tracking-widest text-blue-400 font-black mb-2">Mortgage (NMLS# 955386)</span>
+          <a href="tel:214-457-7055" class="block font-bold">214-457-7055</a>
+          <p class="text-xs text-slate-400">Bahman@UtopiaMortgage.net</p>
+        </div>
+      </div>
+
+      <a href="https://utopia.my1003app.com/955386" target="_blank"
+         class="inline-block w-full text-center py-4 bg-brand-red hover:bg-white hover:text-brand-blue transition-all font-black uppercase tracking-widest text-xs rounded-lg">
+        Apply For Mortgage Loan Now
+      </a>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <div class="grid lg:grid-cols-3 gap-16">
+
+      <div class="lg:col-span-2 space-y-12">
+        <div>
+          <h2 class="text-2xl font-black text-brand-blue uppercase tracking-tight mb-4 border-l-4 border-brand-red pl-4">Professional Overview</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Bahman Davani offers both residential and commercial real estate services, as well as consulting services, in North Texas. As a bilingual agent speaking both <strong>Farsi and English</strong>, he bridges the gap for international clients. With a strong background in Computer Science and Mathematics, Bahman provides unmatched Financial and Market Analysis.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+            <h3 class="font-black text-brand-blue uppercase text-sm mb-3">Commercial Expertise</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Member of CCIM (Candidate). Expertise in site location, neighborhood demographics, and complex financial analysis to maximize client value.
+            </p>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+            <h3 class="font-black text-brand-blue uppercase text-sm mb-3">Residential Mastery</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Certified Distressed Property Expert (CDPE) and ABR®. Helping clients avoid foreclosure and guiding buyers through every step of the process.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-black text-brand-blue uppercase tracking-tight mb-6">Committees & Leadership</h2>
+          <ul class="grid md:grid-cols-2 gap-x-8 gap-y-3">
+            <li *ngFor="let item of committees" class="text-xs text-slate-500 flex gap-2 italic">
+              <span class="text-brand-red">■</span> {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lg:col-span-1">
+        <div class="sticky top-24 space-y-8">
+          <div class="bg-brand-blue text-white p-8 rounded-3xl shadow-xl shadow-brand-blue/20">
+            <h3 class="font-black uppercase tracking-widest text-xs mb-6 text-brand-red">Credentials</h3>
+            <div class="flex flex-wrap gap-2">
+              <span *ngFor="let badge of designations"
+                    class="px-3 py-1 bg-white/10 rounded-md text-[10px] font-bold tracking-tighter">
+                {{ badge }}
+              </span>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10">
+              <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-4">Location</p>
+              <address class="text-xs not-italic text-slate-200 leading-relaxed">
+                Utopia Mortgage, LLC.<br>
+                6301 Gaston Ave, West Tower Suite 1146<br>
+                Dallas, TX 75214
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>

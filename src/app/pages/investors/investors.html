@@ -1,0 +1,93 @@
+<section class="bg-slate-50 min-h-screen">
+  <div class="bg-brand-blue py-20 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div class="lg:w-2/3 text-white">
+        <span class="text-brand-red font-black uppercase tracking-widest text-xs">Analytical Real Estate Expertise</span>
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mt-4 mb-6">Real Estate Investment</h1>
+        <p class="text-lg opacity-80 leading-relaxed font-medium">
+          Strategic commercial property analysis requires more than just market knowledge—it requires strong analytical skills and state-of-the-art technology to maximize client value.
+        </p>
+      </div>
+      <div class="lg:w-1/3 bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 text-white">
+        <h3 class="font-black uppercase text-sm mb-4">Required Expertise</h3>
+        <ul class="text-xs space-y-3 font-bold opacity-90">
+          <li>• Geospatial Technology Analysis</li>
+          <li>• Financial & Market Analysis</li>
+          <li>• Lease vs. Purchase Decision Analysis</li>
+          <li>• Professional Networking & Marketing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-20">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      <div *ngFor="let type of propertyTypes" class="bg-white p-8 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-brand-red transition-all group">
+        <div class="w-12 h-12 bg-brand-blue/5 rounded-2xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+          <span class="material-icons">{{type.icon}}</span>
+        </div>
+        <h3 class="text-xl font-black text-brand-blue uppercase mb-3">{{type.title}}</h3>
+        <p class="text-sm text-gray-500 mb-6 leading-relaxed">{{type.desc}}</p>
+        <div class="space-y-2">
+          <p class="text-[10px] font-black uppercase text-brand-red tracking-widest">Key Expertise:</p>
+          <ul class="text-[11px] font-bold text-slate-600">
+            <li *ngFor="let s of type.skills">• {{s}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="bg-white rounded-[2.5rem] p-10 shadow-2xl">
+        <h2 class="text-2xl font-black text-brand-blue uppercase mb-8 border-l-4 border-brand-red pl-6">Investment Analysis</h2>
+        <div class="space-y-6 text-sm text-gray-600">
+          <div class="p-6 bg-slate-50 rounded-2xl">
+            <h4 class="font-black text-brand-blue uppercase mb-2">Strategy & Acquisition</h4>
+            <p>We assess client needs to determine optimal investment strategy, evaluate disposition strategies, and forecast demand for specific property types.</p>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-2xl">
+            <h4 class="font-black text-brand-blue uppercase mb-2">Financial Performance</h4>
+            <p>Calculate property value, measure investment performance, and compare before- and after-tax yields to ensure profitability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-brand-blue rounded-[2.5rem] p-10 text-white shadow-2xl">
+        <h2 class="text-2xl font-black uppercase mb-8 border-l-4 border-brand-red pl-6">Decision Support</h2>
+        <ul class="space-y-6">
+          <li class="flex gap-4">
+            <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-brand-red italic">01</span>
+            <div>
+              <p class="font-black uppercase text-sm">Financing Options</p>
+              <p class="text-xs opacity-70">Compare complex financing options for virtually any aspect of commercial RE.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-brand-red italic">02</span>
+            <div>
+              <p class="font-black uppercase text-sm">Leasing Alternatives</p>
+              <p class="text-xs opacity-70">Evaluate leasing alternatives vs. purchase options based on financial analysis.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-bold text-brand-red italic">03</span>
+            <div>
+              <p class="font-black uppercase text-sm">Home Flipping</p>
+              <p class="text-xs opacity-70">Expert guidance on FHA rules, regulations, and restrictions for flipping investments.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-20 pt-10 border-t border-slate-200">
+      <h3 class="text-center font-black text-brand-blue uppercase tracking-widest mb-10">Commercial Web Resources</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="px-6 py-3 bg-white border border-slate-200 rounded-full text-xs font-bold text-gray-600 hover:text-brand-red hover:border-brand-red transition-all shadow-sm">North Texas Commercial Association</a>
+        <a href="#" class="px-6 py-3 bg-white border border-slate-200 rounded-full text-xs font-bold text-gray-600 hover:text-brand-red hover:border-brand-red transition-all shadow-sm">Texas Land Title Association</a>
+        <a href="#" class="px-6 py-3 bg-white border border-slate-200 rounded-full text-xs font-bold text-gray-600 hover:text-brand-red hover:border-brand-red transition-all shadow-sm">International Council of Shopping Centers</a>
+        <a href="#" class="px-6 py-3 bg-white border border-slate-200 rounded-full text-xs font-bold text-gray-600 hover:text-brand-red hover:border-brand-red transition-all shadow-sm">Urban Land Institute</a>
+      </div>
+    </div>
+  </div>
+</section>

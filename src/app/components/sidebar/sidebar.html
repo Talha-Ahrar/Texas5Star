@@ -1,0 +1,86 @@
+<div *ngIf="isOpen" class="fixed inset-0 z-[100] flex justify-start" role="dialog" aria-modal="true">
+  <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300" (click)="closeSidebar()"></div>
+
+  <div
+    class="relative bg-white w-[300px] sm:w-[380px] h-full shadow-2xl flex flex-col overflow-hidden animate-slide-left"
+    (click)="stopPropagation($event)"
+  >
+    <div class="p-6 bg-brand-blue text-white flex justify-between items-center shrink-0">
+      <div>
+        <h3 class="font-black uppercase tracking-widest text-base leading-none">Resource Center</h3>
+        <p class="text-[9px] text-white/60 uppercase tracking-widest mt-2">Texas Five Star Realty</p>
+      </div>
+      <button (click)="closeSidebar()" class="text-3xl leading-none hover:text-brand-red transition-colors" aria-label="Close menu">&times;</button>
+    </div>
+
+    <div class="flex-grow overflow-y-auto p-6 space-y-8 custom-scrollbar">
+
+      <nav class="flex flex-col space-y-3">
+        <a routerLink="/search" (click)="closeSidebar()" class="flex items-center gap-3 font-bold text-slate-800 hover:text-brand-red transition-colors">
+          <span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Search Properties
+        </a>
+        <a routerLink="/valuation" (click)="closeSidebar()" class="flex items-center gap-3 font-bold text-slate-800 hover:text-brand-red transition-colors">
+          <span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span> Find Your Home's Value
+        </a>
+      </nav>
+
+      <div class="space-y-3">
+        <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400">Market Insights</h4>
+        <div class="flex flex-col gap-3">
+          <a routerLink="/market-snapshots" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Local Market Snapshots</a>
+          <a routerLink="/trends" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Local Real Estate Trends</a>
+          <a routerLink="/news" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">National Market News</a>
+          <a routerLink="/foreclosure-vs-short-sale" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Foreclosure vs. Short Sale</a>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400">Calculators & Finance</h4>
+        <div class="flex flex-col gap-3">
+          <a routerLink="/mortgage-calculator" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Mortgage Calculator</a>
+          <a routerLink="/mortgage-amortization" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Mortgage Amortization</a>
+          <a routerLink="/closing-cost" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Estimate Closing Cost</a>
+          <a routerLink="/rent-vs-buy" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Rent vs Buy Calculator</a>
+          <a routerLink="/green-tax-credit" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Green Tax Credit</a>
+          <a routerLink="/loan-types" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Types of Loans</a>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400">Dallas / FW Area</h4>
+        <div class="grid grid-cols-1 gap-3">
+          <a routerLink="/dfw-directories" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Dallas FW City Directories</a>
+          <a routerLink="/dfw-school-ratings" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Dallas FW School Ratings</a>
+          <a routerLink="/dfw-tax-rates" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Dallas FW City Tax Rates</a>
+          <a routerLink="/relocation-texas" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Relocation to Texas</a>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400">Knowledge Base</h4>
+        <div class="flex flex-col gap-3">
+          <a routerLink="/customers-vs-clients" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Customers vs Clients</a>
+          <a routerLink="/repair-cost-vs-value" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Repair Cost vs Value</a>
+          <a routerLink="/first-home" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Your First Home?</a>
+          <a routerLink="/knowledge-test" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Test Your R. E. Knowledge</a>
+        </div>
+      </div>
+
+      <div class="space-y-3 pb-10">
+        <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400">Property Services</h4>
+        <div class="flex flex-col gap-3">
+          <a routerLink="/blogs" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">My Blogs</a>
+          <a routerLink="/testimonials" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Testimonials</a>
+          <a routerLink="/property-management" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Property Management</a>
+          <a routerLink="/open-house-tool" (click)="closeSidebar()" class="text-sm font-bold text-slate-700 hover:text-brand-blue">Open House Manager Tool</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-6 border-t border-slate-100 bg-slate-50 shrink-0">
+      <button routerLink="/contact" (click)="closeSidebar()" class="w-full py-4 bg-brand-red text-white font-black uppercase text-[11px] tracking-widest rounded-xl hover:bg-brand-blue transition-colors shadow-lg shadow-brand-red/20">
+        Get Expert Help
+      </button>
+    </div>
+  </div>
+</div>
