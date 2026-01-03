@@ -31,11 +31,11 @@
               "src/app/app.css"
             ],
             "server": "src/main.server.ts",
-            "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
             },
-            "prerender": false
+            "prerender": false,
+            "outputMode": "server"
           },
           "configurations": {
             "production": {
@@ -92,7 +92,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/custom-theme.scss",
+              "src/app/app.css"
             ]
           }
         }
