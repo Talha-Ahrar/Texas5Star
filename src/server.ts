@@ -5,24 +5,14 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
-import { join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+const serverDistFolder = dirname(fileURLToPath(import.meta.url));
+const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
-
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
 
 /**
  * Serve static files from /browser
@@ -53,9 +43,11 @@ app.use((req, res, next) => {
  */
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
-  app.listen(port, (error) => {
+  // Added ': any' to 'error' to resolve the TS7006 error
+  app.listen(port, (error: any) => {
     if (error) {
-      throw error;
+      console.error('Error starting server:', error);
+      return;
     }
 
     console.log(`Node Express server listening on http://localhost:${port}`);
