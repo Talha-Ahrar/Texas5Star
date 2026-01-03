@@ -6,7 +6,7 @@ import { CommonModule, isPlatformServer } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about.html',
-  styleUrls: ['./about.css'], // fixed typo
+  styleUrls: ['./about.css'],
 })
 export class About {
   isServer = false;

@@ -1,0 +1,15 @@
+/* Fade-in animation for SSR-safe image */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out;
+}
+
+/* Brand colors (customize as needed) */
+.text-brand-red { color: #E63946; }
+.bg-brand-red { background-color: #E63946; }
+.text-brand-blue { color: #1D3557; }
+.bg-brand-blue { background-color: #1D3557; }
