@@ -6,10 +6,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about.html',
-  styleUrl: './about.css',
+  styleUrls: ['./about.css'], // fixed typo
 })
 export class About {
-  // Organizing the massive list of credentials for the template
   designations = [
     'REALTOR®', 'ABR', 'CDPE', 'GRI', 'SFR', 'TAHS', 'eAgentC', 'CM', 'DTM', 'RP'
   ];
