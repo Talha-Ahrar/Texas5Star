@@ -5,7 +5,7 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
-import { dirname, join, resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
@@ -31,30 +31,37 @@ app.use(
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => {
+      if (response) {
+        writeResponseToNodeResponse(response, res);
+      } else {
+        next();
+      }
+    })
     .catch(next);
 });
 
 /**
  * Start the server if this module is the main entry point.
- * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
+ * The server listens on the port defined by the `PORT` environment variable,
+ * or defaults to 4000.
  */
 if (isMainModule(import.meta.url)) {
-  const port = process.env['PORT'] || 4000;
-  // Added ': any' to 'error' to resolve the TS7006 error
-  app.listen(port, (error: any) => {
-    if (error) {
-      console.error('Error starting server:', error);
-      return;
-    }
+  const port = Number(process.env['PORT'] ?? 4000);
 
-    console.log(`Node Express server listening on http://localhost:${port}`);
+  const server = app.listen(port, () => {
+    console.log(
+      `✅ Node Express server listening on http://localhost:${port}`,
+    );
+  });
+
+  server.on('error', (err) => {
+    console.error('❌ Server startup error:', err);
   });
 }
 
 /**
- * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
+ * Request handler used by the Angular CLI (dev-server, build)
+ * or serverless platforms (Firebase, Vercel, etc.)
  */
 export const reqHandler = createNodeRequestHandler(app);
