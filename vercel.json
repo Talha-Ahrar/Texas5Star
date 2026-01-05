@@ -1,19 +1,11 @@
 {
   "version": 2,
-  "builds": [
+  "public": true,
+  "framework": "angular",
+  "rewrites": [
     {
-      "src": "dist/texas-realty/server/server.mjs",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/texas-realty/browser/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/texas-realty/server/server.mjs"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

@@ -5,7 +5,6 @@
   "projects": {
     "texas-realty": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,39 +23,26 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/web.config"
             ],
             "styles": [
               "src/custom-theme.scss",
               "src/app/app.css"
             ],
-            "server": "src/main.server.ts",
-            "ssr": {
-              "entry": "src/server.ts"
-            },
-            "prerender": false,
-            "outputMode": "server"
+            "outputMode": "static",
+            "ssr": false,
+            "prerender": false
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "1MB",
-                  "maximumError": "2MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "100kB",
-                  "maximumError": "150kB"
-                }
-              ],
+              "optimization": true,
               "outputHashing": "all",
-              "prerender": false
+              "sourceMap": false,
+              "extractLicenses": true
             },
             "development": {
               "optimization": false,
-              "extractLicenses": false,
               "sourceMap": true
             }
           },
@@ -64,43 +50,14 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "texas-realty:build:production"
-            },
-            "development": {
-              "buildTarget": "texas-realty:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/custom-theme.scss",
-              "src/app/app.css"
-            ]
+            "buildTarget": "texas-realty:build"
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "144212cc-47e4-49c5-a3aa-de8a9c69405d"
+    "analytics": "aaf4545f-483a-4139-86af-6881f6c4fab2"
   }
 }

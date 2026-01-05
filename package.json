@@ -1,15 +1,14 @@
 {
   "name": "texas-realty",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prerender false",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:texas-realty": "node dist/texas-realty/server/server.mjs",
-    "deploy": "ng build --base-href=/Texas5Star/ && npx angular-cli-ghpages --dir=dist/texas-realty/browser"
-  },
+"scripts": {
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test"
+}
+,
   "prettier": {
     "overrides": [
       {
